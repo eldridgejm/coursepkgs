@@ -44,6 +44,38 @@
           nativeBuildInputs = with pkgs.python3.pkgs; [ pytest black ipython jupyter ];
         };
 
+        dscproblemset = pkgs.stdenv.mkDerivation rec {
+          name = "dscproblemset.sty";
+          src = pkgs.fetchFromGitHub {
+            owner = "eldridgejm";
+            repo = "dscproblemset.sty";
+            rev = "main";
+            sha256 = "sha256-OutRtORxOOXLyEehrhM0kh0vRkH1S9YgR9VnMPzwpBs=";
+          };
+          installPhase = ''
+          mkdir -p $out
+          cp dscproblemset.sty $out/
+          '';
+          pname = name;
+          tlType = "run";
+        };
+
+        dscslides = pkgs.stdenv.mkDerivation rec {
+          name = "dscslides.cls";
+          src = pkgs.fetchFromGitHub {
+            owner = "eldridgejm";
+            repo = "dscslides.cls";
+            rev = "main";
+            sha256 = "sha256-NQBF1LnyHzQPeShkYSNL99gCkekZZkw5/oYcZ2g/6cs=";
+          };
+          installPhase = ''
+          mkdir -p $out
+          cp dscslides.cls $out/
+          '';
+          pname = name;
+          tlType = "run";
+        };
+
         dictconfig = pkgs.python3Packages.buildPythonPackage {
           name = "dictconfig";
           src = pkgs.fetchFromGitHub {
