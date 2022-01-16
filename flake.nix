@@ -5,7 +5,7 @@
   let
     supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" ];
     forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
-    
+
   in
   {
 
@@ -13,7 +13,8 @@
     let
       pkgs = import nixpkgs { system = "${system}"; };
     in
-      {
+      rec {
+
         automata = pkgs.python3Packages.buildPythonPackage {
           name = "automata";
           src = pkgs.fetchFromGitHub {
@@ -26,6 +27,7 @@
             pyyaml
             markdown
             jinja2
+            dictconfig
           ];
           nativeBuildInputs = with pkgs.python3Packages; [ pytest black ipython sphinx sphinx_rtd_theme lxml ];
           doCheck = false;
@@ -40,6 +42,18 @@
             sha256 = "sha256-xlUdwukDmZdke0oP+HTkWptx0P9KRkKAcxkHrprrb3A=";
           };
           nativeBuildInputs = with pkgs.python3.pkgs; [ pytest black ipython jupyter ];
+        };
+
+        dictconfig = pkgs.python3Packages.buildPythonPackage {
+          name = "dictconfig";
+          src = pkgs.fetchFromGitHub {
+            owner = "eldridgejm";
+            repo = "dictconfig";
+            rev = "master";
+            sha256 = "sha256-v540rEH20Cs98cGgXRLgHWvMuZb03tuk906rSvQZnyY=";
+          };
+          propagatedBuildInputs = with pkgs.python3Packages; [ jinja2 ];
+          nativeBuildInputs = with pkgs.python3Packages; [ pytest black ipython sphinx sphinx_rtd_theme ];
         };
 
         gradescope-utils = pkgs.python3Packages.buildPythonPackage rec {
@@ -65,8 +79,31 @@
           nativeBuildInputs = with pkgs.python3.pkgs; [ black pytest ipython sphinx sphinx_rtd_theme ];
         };
 
-      }
+        removesoln =
+          let
+            texsoup = pkgs.python3Packages.buildPythonPackage rec {
+              pname = "texsoup";
+              version = "0.3.1";
+              name = "${pname}-${version}";
+              src = builtins.fetchurl {
+                url = "https://files.pythonhosted.org/packages/84/58/1c503390ed1a81cdcbff811dbf7a54132994acef8dd2194d55cf657a9e97/TexSoup-0.3.1.tar.gz";
+                sha256 = "02xpvmhy174z6svpghzq4gs2bsyh0jxc2i7mark8ls73mg82lsrz";
+              };
+              doCheck = false;
+            };
+          in
+            pkgs.python3Packages.buildPythonPackage rec {
+              name = "removesoln";
+              src = pkgs.fetchFromGitHub {
+                owner = "eldridgejm";
+                repo = "removesoln";
+                rev = "master";
+                sha256 = "sha256-EIVhIhfp9xsQIZNDEJcUnlW2bGTZYi4gJQLF/lFGaUs=";
+              };
+              propagatedBuildInputs = [ texsoup ];
+            };
 
+      }
     );
 
   };
