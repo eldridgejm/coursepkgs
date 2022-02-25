@@ -50,7 +50,7 @@
             owner = "eldridgejm";
             repo = "dscproblemset.sty";
             rev = "main";
-            sha256 = "sha256-OutRtORxOOXLyEehrhM0kh0vRkH1S9YgR9VnMPzwpBs=";
+            sha256 = "sha256-OMaQgW3CVGGVXqUZEgLbGHstvFOVxUR9Hs/ao85xusk=";
           };
           installPhase = ''
           mkdir -p $out
