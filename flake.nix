@@ -81,8 +81,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "eldridgejm";
             repo = "dictconfig";
-            rev = "master";
-            sha256 = "sha256-v540rEH20Cs98cGgXRLgHWvMuZb03tuk906rSvQZnyY=";
+            rev = "3db0e7edda59a162d64c9a7ac441e1c5bf848eda";
+            sha256 = "sha256-1PrVTiClDV2vohxiAa3DRcmSFw7I9WCQn2ZsDiV5Om8=";
           };
           propagatedBuildInputs = with pkgs.python3Packages; [ jinja2 ];
           nativeBuildInputs = with pkgs.python3Packages; [ pytest black ipython sphinx sphinx_rtd_theme ];
