@@ -129,7 +129,7 @@
               src = pkgs.fetchFromGitHub {
                 owner = "eldridgejm";
                 repo = "removesoln";
-                rev = "master";
+                rev = "02ce3d9a4d1a7bd9e76182ff796aea4d2d2ddb35";
                 sha256 = "sha256-EIVhIhfp9xsQIZNDEJcUnlW2bGTZYi4gJQLF/lFGaUs=";
               };
               propagatedBuildInputs = [ texsoup ];
