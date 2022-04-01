@@ -20,7 +20,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "eldridgejm";
             repo = "automata";
-            rev = "main";
+            rev = "8766ca9076b5280d410bd23703cbc82898bd3a2c";
             sha256 = "sha256-dTrSJRxWHcAxc2f/LgYgciu3IzcHjVjhypUkyfwtmw0=";
           };
           propagatedBuildInputs = with pkgs.python3Packages; [ 
