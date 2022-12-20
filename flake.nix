@@ -107,6 +107,7 @@
             rev = "cb6f91280bf79128590dcfe8bdc3db62eef0bc8c";
             sha256 = "sha256-mBf2QN0MRiIAcUcW4+D/WHLiMIGB2YwZ3hiuHlrh1to=";
           };
+          doCheck = false;
           propagatedBuildInputs = with pkgs.python3.pkgs; [ pandas bokeh matplotlib numpy ];
           nativeBuildInputs = with pkgs.python3.pkgs; [ black pytest ipython sphinx sphinx_rtd_theme ];
         };
