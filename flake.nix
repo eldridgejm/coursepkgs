@@ -104,10 +104,10 @@
           src = pkgs.fetchFromGitHub {
             owner = "eldridgejm";
             repo = "gradelib";
-            rev = "master";
-            sha256 = "sha256-Ya6+awGwYrbDt0d/oj51wF40hK2gn850cYo+2slcLEk=";
+            rev = "cb6f91280bf79128590dcfe8bdc3db62eef0bc8c";
+            sha256 = "sha256-mBf2QN0MRiIAcUcW4+D/WHLiMIGB2YwZ3hiuHlrh1to=";
           };
-          propagatedBuildInputs = with pkgs.python3.pkgs; [ pandas matplotlib numpy ];
+          propagatedBuildInputs = with pkgs.python3.pkgs; [ pandas bokeh matplotlib numpy ];
           nativeBuildInputs = with pkgs.python3.pkgs; [ black pytest ipython sphinx sphinx_rtd_theme ];
         };
 
