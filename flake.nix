@@ -39,7 +39,7 @@
             owner = "eldridgejm";
             repo = "dsctex";
             rev = "main";
-            sha256 = "sha256-P7hZ8/dZ4WUyM0R5xaSYZC2zAOLt0E6glbJb4TYhSks=";
+            sha256 = "sha256-Z5ChtBlUASMO8JsTo/g7rFluunHbC01UZIgkFeqF0wI=";
           };
           installPhase = ''
           mkdir -p $out
