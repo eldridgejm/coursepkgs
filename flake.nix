@@ -33,33 +33,17 @@
         dsc40graph = dsc40graph-flake.defaultPackage."${system}";
         gradelib = gradelib-flake.defaultPackage."${system}";
 
-        dscproblemset = pkgs.stdenv.mkDerivation rec {
-          name = "dscproblemset.sty";
+        dsctex = pkgs.stdenv.mkDerivation rec {
+          name = "dsctex";
           src = pkgs.fetchFromGitHub {
             owner = "eldridgejm";
-            repo = "dscproblemset.sty";
+            repo = "dsctex";
             rev = "main";
-            sha256 = "sha256-OMaQgW3CVGGVXqUZEgLbGHstvFOVxUR9Hs/ao85xusk=";
+            sha256 = "sha256-OMaQgW3CVGGVXqUZEgLbGHstvFOVxUR9Hs0ao85xusk=";
           };
           installPhase = ''
           mkdir -p $out
-          cp dscproblemset.sty $out/
-          '';
-          pname = name;
-          tlType = "run";
-        };
-
-        dscslides = pkgs.stdenv.mkDerivation rec {
-          name = "dscslides.cls";
-          src = pkgs.fetchFromGitHub {
-            owner = "eldridgejm";
-            repo = "dscslides.cls";
-            rev = "main";
-            sha256 = "sha256-NQBF1LnyHzQPeShkYSNL99gCkekZZkw5/oYcZ2g/6cs=";
-          };
-          installPhase = ''
-          mkdir -p $out
-          cp dscslides.cls $out/
+          cp * $out/
           '';
           pname = name;
           tlType = "run";
