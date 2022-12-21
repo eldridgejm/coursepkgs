@@ -14,9 +14,12 @@
     gradelib-flake.url = "github:eldridgejm/gradelib";
     gradelib-flake.inputs.nixpkgs.follows = "nixpkgs";
 
+    dsctex-flake.url = "github:eldridgejm/dsctex";
+    dsctex-flake.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
-  outputs = { self, nixpkgs, automata-flake, dsc40graph-flake, gradelib-flake }: 
+  outputs = { self, nixpkgs, automata-flake, dsc40graph-flake, gradelib-flake, dsctex-flake }:
   let
     supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-darwin" ];
     forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
@@ -32,22 +35,7 @@
         automata = automata-flake.defaultPackage."${system}";
         dsc40graph = dsc40graph-flake.defaultPackage."${system}";
         gradelib = gradelib-flake.defaultPackage."${system}";
-
-        dsctex = pkgs.stdenv.mkDerivation rec {
-          name = "dsctex";
-          src = pkgs.fetchFromGitHub {
-            owner = "eldridgejm";
-            repo = "dsctex";
-            rev = "main";
-            sha256 = "sha256-Z5ChtBlUASMO8JsTo/g7rFluunHbC01UZIgkFeqF0wI=";
-          };
-          installPhase = ''
-          mkdir -p $out
-          cp * $out/
-          '';
-          pname = name;
-          tlType = "run";
-        };
+        dsctex = dsctex-flake.defaultPackage."${system}";
 
         gradescope-utils = pkgs.python3Packages.buildPythonPackage rec {
           pname = "gradescope-utils";

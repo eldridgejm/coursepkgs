@@ -63,6 +63,26 @@
         "type": "github"
       }
     },
+    "dsctex-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1671607891,
+        "narHash": "sha256-dSI15IKUMqZUm4y2NKD8BHhcmy6rjBDCJjO68tEscew=",
+        "owner": "eldridgejm",
+        "repo": "dsctex",
+        "rev": "6415e873453a5fb945473cf6d2eff4d509b31919",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "repo": "dsctex",
+        "type": "github"
+      }
+    },
     "gradelib-flake": {
       "inputs": {
         "nixpkgs": [
@@ -103,6 +123,7 @@
       "inputs": {
         "automata-flake": "automata-flake",
         "dsc40graph-flake": "dsc40graph-flake",
+        "dsctex-flake": "dsctex-flake",
         "gradelib-flake": "gradelib-flake",
         "nixpkgs": "nixpkgs"
       }
