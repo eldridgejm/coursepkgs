@@ -119,13 +119,34 @@
         "type": "github"
       }
     },
+    "removesoln-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1642209289,
+        "narHash": "sha256-EIVhIhfp9xsQIZNDEJcUnlW2bGTZYi4gJQLF/lFGaUs=",
+        "owner": "eldridgejm",
+        "repo": "removesoln",
+        "rev": "02ce3d9a4d1a7bd9e76182ff796aea4d2d2ddb35",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "repo": "removesoln",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "automata-flake": "automata-flake",
         "dsc40graph-flake": "dsc40graph-flake",
         "dsctex-flake": "dsctex-flake",
         "gradelib-flake": "gradelib-flake",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "removesoln-flake": "removesoln-flake"
       }
     }
   },
