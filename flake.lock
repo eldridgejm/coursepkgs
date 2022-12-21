@@ -1,21 +1,109 @@
 {
   "nodes": {
-    "nixpkgs": {
+    "automata-flake": {
+      "inputs": {
+        "dictconfig": "dictconfig",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1648648646,
-        "narHash": "sha256-pHAq/GvsP7zRHkUTCs+4d31C0IEtTIuC6/TFASIA+zg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "efea022d6fe0da84aa6613d4ddeafb80de713457",
+        "lastModified": 1642209159,
+        "narHash": "sha256-dTrSJRxWHcAxc2f/LgYgciu3IzcHjVjhypUkyfwtmw0=",
+        "owner": "eldridgejm",
+        "repo": "automata",
+        "rev": "8766ca9076b5280d410bd23703cbc82898bd3a2c",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "eldridgejm",
+        "repo": "automata",
+        "type": "github"
+      }
+    },
+    "dictconfig": {
+      "inputs": {
+        "nixpkgs": [
+          "automata-flake",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1642209113,
+        "narHash": "sha256-v540rEH20Cs98cGgXRLgHWvMuZb03tuk906rSvQZnyY=",
+        "owner": "eldridgejm",
+        "repo": "dictconfig",
+        "rev": "cc8bd3c9e3fd524087cfdf82cd9c49f472e95c68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "ref": "master",
+        "repo": "dictconfig",
+        "type": "github"
+      }
+    },
+    "dsc40graph-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1663103664,
+        "narHash": "sha256-vm2mGIJlYWohjxHoU4NQAlYF40vsjs8RFdsNIVXroO4=",
+        "owner": "eldridgejm",
+        "repo": "dsc40graph",
+        "rev": "c1e7f9dc930026ee6217713b319dcaaeeb2a1046",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "repo": "dsc40graph",
+        "type": "github"
+      }
+    },
+    "gradelib-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1671056623,
+        "narHash": "sha256-mBf2QN0MRiIAcUcW4+D/WHLiMIGB2YwZ3hiuHlrh1to=",
+        "owner": "eldridgejm",
+        "repo": "gradelib",
+        "rev": "cb6f91280bf79128590dcfe8bdc3db62eef0bc8c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "repo": "gradelib",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1638239011,
+        "narHash": "sha256-AjhmbT4UBlJWqxY0ea8a6GU2C2HdKUREkG43oRr3TZg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "21.11",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
+        "automata-flake": "automata-flake",
+        "dsc40graph-flake": "dsc40graph-flake",
+        "gradelib-flake": "gradelib-flake",
         "nixpkgs": "nixpkgs"
       }
     }
