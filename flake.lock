@@ -70,11 +70,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1671607891,
-        "narHash": "sha256-dSI15IKUMqZUm4y2NKD8BHhcmy6rjBDCJjO68tEscew=",
+        "lastModified": 1671738407,
+        "narHash": "sha256-+0Tg2TDitNQw1BjG6GZp9BVl1ABqtBbBAsZbo7ihMp8=",
         "owner": "eldridgejm",
         "repo": "dsctex",
-        "rev": "6415e873453a5fb945473cf6d2eff4d509b31919",
+        "rev": "bb0e557859c6c12ecaf9d36016f41150366346d3",
         "type": "github"
       },
       "original": {
