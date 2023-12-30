@@ -2,7 +2,7 @@
   description = "Packages used in DSC courses @ UCSD.";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/23.05;
+    nixpkgs.url = github:NixOS/nixpkgs/23.11;
 
     automata-flake.url = "github:eldridgejm/automata";
     automata-flake.inputs.nixpkgs.follows = "nixpkgs";
