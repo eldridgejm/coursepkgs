@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1642209159,
-        "narHash": "sha256-dTrSJRxWHcAxc2f/LgYgciu3IzcHjVjhypUkyfwtmw0=",
+        "lastModified": 1767991704,
+        "narHash": "sha256-wcn8oLbdmc+Z6NdForfmsUSd619I9PxVAlfS57+ivWU=",
         "owner": "eldridgejm",
         "repo": "automata",
-        "rev": "8766ca9076b5280d410bd23703cbc82898bd3a2c",
+        "rev": "565b7babee706f5c11d98ddf50d6cc684b2b9dc1",
         "type": "github"
       },
       "original": {
