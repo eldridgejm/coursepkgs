@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767991704,
-        "narHash": "sha256-wcn8oLbdmc+Z6NdForfmsUSd619I9PxVAlfS57+ivWU=",
+        "lastModified": 1642209159,
+        "narHash": "sha256-dTrSJRxWHcAxc2f/LgYgciu3IzcHjVjhypUkyfwtmw0=",
         "owner": "eldridgejm",
         "repo": "automata",
-        "rev": "565b7babee706f5c11d98ddf50d6cc684b2b9dc1",
+        "rev": "8766ca9076b5280d410bd23703cbc82898bd3a2c",
         "type": "github"
       },
       "original": {
@@ -83,6 +83,26 @@
         "type": "github"
       }
     },
+    "gradelib-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1711332544,
+        "narHash": "sha256-5CV9PSLovt2J8lLEjTs7Y5aJ7VnXCaZxmNifNf/StRA=",
+        "owner": "eldridgejm",
+        "repo": "gradelib",
+        "rev": "fec88bd620fe7987dcdbe4c0162c2fcefedcee4e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "repo": "gradelib",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1701282334,
@@ -99,12 +119,34 @@
         "type": "github"
       }
     },
+    "removesoln-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1642209289,
+        "narHash": "sha256-EIVhIhfp9xsQIZNDEJcUnlW2bGTZYi4gJQLF/lFGaUs=",
+        "owner": "eldridgejm",
+        "repo": "removesoln",
+        "rev": "02ce3d9a4d1a7bd9e76182ff796aea4d2d2ddb35",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eldridgejm",
+        "repo": "removesoln",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "automata-flake": "automata-flake",
         "dsc40graph-flake": "dsc40graph-flake",
         "dsctex-flake": "dsctex-flake",
-        "nixpkgs": "nixpkgs"
+        "gradelib-flake": "gradelib-flake",
+        "nixpkgs": "nixpkgs",
+        "removesoln-flake": "removesoln-flake"
       }
     }
   },

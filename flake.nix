@@ -10,8 +10,14 @@
     dsc40graph-flake.url = "github:eldridgejm/dsc40graph";
     dsc40graph-flake.inputs.nixpkgs.follows = "nixpkgs";
 
+    gradelib-flake.url = "github:eldridgejm/gradelib";
+    gradelib-flake.inputs.nixpkgs.follows = "nixpkgs";
+
     dsctex-flake.url = "github:eldridgejm/dsctex";
     dsctex-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    removesoln-flake.url = "github:eldridgejm/removesoln";
+    removesoln-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -19,7 +25,9 @@
     nixpkgs,
     automata-flake,
     dsc40graph-flake,
+    gradelib-flake,
     dsctex-flake,
+    removesoln-flake,
   }: let
     supportedSystems = ["x86_64-linux" "x86_64-darwin" "aarch64-darwin"];
     forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
@@ -30,7 +38,9 @@
       in rec {
         automata = automata-flake.defaultPackage."${system}";
         dsc40graph = dsc40graph-flake.defaultPackage."${system}";
+        gradelib = gradelib-flake.defaultPackage."${system}";
         dsctex = dsctex-flake.defaultPackage."${system}";
+        removesoln = removesoln-flake.defaultPackage."${system}";
 
         gradescope-utils = pkgs.python3Packages.buildPythonPackage rec {
           pname = "gradescope-utils";
